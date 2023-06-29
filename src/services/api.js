@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { setAuthHeader, clearAuthHeader } from 'redux/authReducer';
+import { setAuthHeader, clearAuthHeader } from 'redux/Auth/authReducer';
 import axios from 'axios';
 
 axios.defaults.baseURL = `https://connections-api.herokuapp.com`;
@@ -75,3 +75,20 @@ export const logOut = createAsyncThunk(`auth/logout`, async (_, thunkAPI) => {
     return thunkAPI.rejectWithValue(error.message);
   }
 });
+
+//
+
+export const refresh = createAsyncThunk(`auth/refresh`, async (_, thunkAPI) => {
+  const { token } = thunkAPI.getState().auth;
+  if (!token) {
+    return thunkAPI.rejectWithValue('You are not logged in');
+  }
+  try {
+    setAuthHeader(token);
+    const responce = await axios.get(`/users/current`);
+    return responce.data;
+  } catch (error) {
+    thunkAPI.rejectWithValue(error.message);
+  }
+});
+//

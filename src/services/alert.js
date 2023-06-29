@@ -1,13 +1,9 @@
-// import Notiflix from 'notiflix';
+import Notiflix from 'notiflix';
 
-// const alertSucces = () => {
-//   Notiflix.Notify.success(`Hooray, you have successfully registered`);
-// };
+export const alertSucces = () => {
+  Notiflix.Notify.success(`operation done successfully`);
+};
 
-// const alertFailure = () => {
-//   Notiflix.Notify.failure(`Oops,something went wrong :(`);
-// };
-
-// // export { alertSucces as success, alertFailure as failure };
-
-// export { alertSucces };
+export const alertFailure = () => {
+  Notiflix.Notify.failure(`Oops,something went wrong :(`);
+};

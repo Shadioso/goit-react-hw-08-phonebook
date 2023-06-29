@@ -2,12 +2,8 @@ import { Form } from './Login.styled';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { login } from 'services/api';
-import {
-  Title,
-  Input,
-  Button,
-  Label,
-} from 'components/PhoneBook/PhoneBook.styled';
+import { Input, Button, Label } from 'components/PhoneBook/PhoneBook.styled';
+import { FormTitle } from './Login.styled';
 
 const Login = () => {
   const [email, setEmail] = useState(``);
@@ -47,7 +43,7 @@ const Login = () => {
 
   return (
     <>
-      <Title>Login 👨‍💻</Title>
+      <FormTitle>Login 👨‍💻</FormTitle>
       <Form onSubmit={submitForm}>
         <Label>
           Email

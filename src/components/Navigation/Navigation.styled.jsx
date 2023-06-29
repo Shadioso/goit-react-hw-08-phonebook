@@ -39,6 +39,7 @@ export const ItemUser = styled.li`
 
 export const NavList = styled.ul`
   position: relative;
+  background-color: dodgerblue;
   list-style: none;
   padding: 20px;
   margin: 0px;
@@ -57,7 +58,7 @@ export const NavLinkStyled = styled(NavLink)`
 export const Title = styled.h1`
   position: absolute;
   top: 5%;
-  left: 40%;
+  left: 43%;
 `;
 
 export const Stroke = styled.p`

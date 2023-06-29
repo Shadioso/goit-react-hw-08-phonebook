@@ -13,21 +13,27 @@ export const Label = styled.label`
 `;
 
 export const Input = styled.input`
-  font-size: 20px;
+  font-size: 27px;
   margin-top: 15px;
+  border-radius: 7px;
 `;
 export const Form = styled.form`
   display: block;
   padding: 20px;
   border: 1px solid black;
   width: 300px;
-  height: 250px;
+  height: 270px;
+  border-radius: 10px;
 `;
 
 export const Button = styled.button`
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-top: 40px;
   width: 85px;
-  height: 30px;
+  height: 40px;
   background-color: transparent;
   border-radius: 10px;
   cursor: pointer;

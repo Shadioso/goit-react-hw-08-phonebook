@@ -6,7 +6,7 @@ import {
   handleRejected,
   handleAddContact,
   handleDeleteContact,
-} from './bulderFunc';
+} from './contactBulderFunc';
 
 const initialState = {
   items: [],

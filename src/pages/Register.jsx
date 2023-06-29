@@ -2,12 +2,8 @@ import { useState } from 'react';
 import { Form } from './Login.styled';
 import { useDispatch } from 'react-redux';
 import { register } from 'services/api';
-import {
-  Title,
-  Input,
-  Button,
-  Label,
-} from 'components/PhoneBook/PhoneBook.styled';
+import { Input, Button, Label } from 'components/PhoneBook/PhoneBook.styled';
+import { FormTitle } from './Login.styled';
 
 const Register = () => {
   const [name, setName] = useState(``);
@@ -52,7 +48,7 @@ const Register = () => {
   };
   return (
     <>
-      <Title> Sign up 👨‍💻</Title>
+      <FormTitle> Sign up 👨‍💻</FormTitle>
       <Form onSubmit={submitForm}>
         <Label>
           Name

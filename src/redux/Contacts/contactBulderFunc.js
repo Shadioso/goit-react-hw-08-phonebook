@@ -1,5 +1,3 @@
-// import { fetchContacts, addContact, deleteContact } from 'services/api';
-
 export const handlePending = state => {
   state.isLoading = `pending`;
 };

@@ -2,12 +2,15 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { List, Item, Name, Number, Message } from './ContactList.styled';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectFilteredList } from 'redux/selectors';
+import { selectFilteredList, selectLoading } from 'redux/selectors';
 import { fetchContacts, deleteContact } from 'services/api';
+import { Loader } from 'components/Loader/Loader';
 
 //
 const ContactList = () => {
   const filteredList = useSelector(selectFilteredList);
+  const isLoading = useSelector(selectLoading);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -19,9 +22,10 @@ const ContactList = () => {
     const idx = e.currentTarget.dataset.id;
     dispatch(deleteContact(idx));
   };
-
   //
-  return (
+  return isLoading === `pending` ? (
+    <Loader />
+  ) : (
     <List>
       {filteredList.length !== 0 ? (
         filteredList.map(({ id, name, number }) => (

@@ -1,7 +1,7 @@
 import { Label, Input } from 'components/PhoneBook/PhoneBook.styled';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectFilter } from 'redux/selectors';
-import { filterReducer } from 'redux/filterReducer';
+import { filterReducer } from 'redux/Filter/filterReducer';
 
 //
 const { handleChangeFilter } = filterReducer.actions;

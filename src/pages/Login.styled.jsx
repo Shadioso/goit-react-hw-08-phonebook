@@ -8,4 +8,13 @@ export const Form = styled.form`
   height: 350px;
   margin-left: auto;
   margin-right: auto;
+  border-radius: 10px;
+`;
+
+export const FormTitle = styled.h1`
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 45px;
+  font-weight: 600;
 `;
