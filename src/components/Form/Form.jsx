@@ -8,12 +8,7 @@ import { selectContactList } from 'redux/selectors';
 const Form = () => {
   const contactList = useSelector(selectContactList);
   const dispatch = useDispatch();
-  const [name, setName] = useState(``);
-  const [number, setNumber] = useState(``);
-  const state = {
-    name,
-    number,
-  };
+  const [contact, setContact] = useState({ name: ``, number: `` });
 
   const onSubmit = data => {
     if (contactList.find(({ name }) => name === data.name)) {
@@ -26,30 +21,22 @@ const Form = () => {
 
   const submitForm = evt => {
     evt.preventDefault();
-    onSubmit(state);
-    setName(``);
-    setNumber(``);
+    onSubmit(contact);
+    setContact({ name: ``, number: `` });
   };
 
   const changeInput = evt => {
-    const { name } = evt.target;
-    switch (name) {
-      case `name`:
-        setName(evt.target.value);
-        break;
-      case `number`:
-        setNumber(evt.target.value);
-        break;
-      default:
-        return;
-    }
+    setContact(prevState => ({
+      ...prevState,
+      [evt.target.name]: evt.target.value,
+    }));
   };
 
   return (
     <PhoneBook
       SubmitForm={submitForm}
       ChangeInput={changeInput}
-      options={state}
+      options={contact}
     />
   );
 };

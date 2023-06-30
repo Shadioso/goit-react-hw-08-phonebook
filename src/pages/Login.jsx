@@ -6,14 +6,8 @@ import { Input, Button, Label } from 'components/PhoneBook/PhoneBook.styled';
 import { FormTitle } from './Login.styled';
 
 const Login = () => {
-  const [email, setEmail] = useState(``);
-  const [password, setPassword] = useState(``);
+  const [contact, setContact] = useState({ email: ``, password: `` });
   const dispatch = useDispatch();
-
-  const state = {
-    email,
-    password,
-  };
 
   const onSubmit = data => {
     console.log(data);
@@ -22,23 +16,15 @@ const Login = () => {
 
   const submitForm = evt => {
     evt.preventDefault();
-    onSubmit(state);
-    setEmail(``);
-    setPassword(``);
+    onSubmit(contact);
+    setContact({ email: ``, password: `` });
   };
 
   const changeInput = evt => {
-    const { name } = evt.target;
-    switch (name) {
-      case `email`:
-        setEmail(evt.target.value);
-        break;
-      case `password`:
-        setPassword(evt.target.value);
-        break;
-      default:
-        return;
-    }
+    setContact(prevState => ({
+      ...prevState,
+      [evt.target.name]: evt.target.value,
+    }));
   };
 
   return (
@@ -50,7 +36,7 @@ const Login = () => {
           <Input
             type="email"
             name="email"
-            value={email}
+            value={contact.email}
             //   pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
             title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
             required
@@ -62,7 +48,7 @@ const Login = () => {
           <Input
             type="password"
             name="password"
-            value={password}
+            value={contact.password}
             //   pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
             title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
             required
@@ -70,7 +56,7 @@ const Login = () => {
           />
         </Label>
 
-        <Button type="submit" disabled={!email || !password}>
+        <Button type="submit" disabled={!contact.email || !contact.password}>
           Done🚀
         </Button>
       </Form>

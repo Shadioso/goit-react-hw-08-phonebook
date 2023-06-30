@@ -6,46 +6,26 @@ import { Input, Button, Label } from 'components/PhoneBook/PhoneBook.styled';
 import { FormTitle } from './Login.styled';
 
 const Register = () => {
-  const [name, setName] = useState(``);
-  const [email, setEmail] = useState(``);
-  const [password, setPassword] = useState(``);
+  const [contact, setContact] = useState({ name: ``, email: ``, password: `` });
   const dispatch = useDispatch();
 
-  const state = {
-    name,
-    email,
-    password,
-  };
-
   const onSubmit = data => {
-    console.log(data);
     dispatch(register(data));
   };
 
   const submitForm = evt => {
     evt.preventDefault();
-    onSubmit(state);
-    setEmail(``);
-    setName(``);
-    setPassword(``);
+    onSubmit(contact);
+    setContact({ name: ``, email: ``, password: `` });
   };
 
   const changeInput = evt => {
-    const { name } = evt.target;
-    switch (name) {
-      case `name`:
-        setName(evt.target.value);
-        break;
-      case `email`:
-        setEmail(evt.target.value);
-        break;
-      case `password`:
-        setPassword(evt.target.value);
-        break;
-      default:
-        return;
-    }
+    setContact(prevState => ({
+      ...prevState,
+      [evt.target.name]: evt.target.value,
+    }));
   };
+
   return (
     <>
       <FormTitle> Sign up 👨‍💻</FormTitle>
@@ -55,7 +35,7 @@ const Register = () => {
           <Input
             type="name"
             name="name"
-            value={name}
+            value={contact.name}
             //   pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
             title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
             required
@@ -67,7 +47,7 @@ const Register = () => {
           <Input
             type="email"
             name="email"
-            value={email}
+            value={contact.email}
             //   pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
             title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
             required
@@ -79,7 +59,7 @@ const Register = () => {
           <Input
             type="password"
             name="password"
-            value={password}
+            value={contact.password}
             //   pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
             title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
             required
@@ -87,7 +67,10 @@ const Register = () => {
           />
         </Label>
 
-        <Button type="submit" disabled={!email || !name || !password}>
+        <Button
+          type="submit"
+          disabled={!contact.email || !contact.name || !contact.password}
+        >
           Done🚀
         </Button>
       </Form>
