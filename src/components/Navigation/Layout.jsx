@@ -1,12 +1,13 @@
 import { Outlet } from 'react-router-dom';
 import { Suspense } from 'react';
 import Navigation from './Navigation';
+import { Loader } from 'components/Loader/Loader';
 
 const Layout = () => {
   return (
     <>
       <Navigation />
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<Loader />}>
         <Outlet />
       </Suspense>
     </>
