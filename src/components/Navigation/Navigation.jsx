@@ -1,32 +1,57 @@
-import { NavList, Item, NavLinkStyled, ItemUser } from './Navigation.styled';
+import {
+  NavList,
+  Item,
+  NavLinkStyled,
+  Header,
+  LogoBox,
+  Nav,
+  LogoIcon,
+  LogoElement,
+  LogoTitle,
+} from './Navigation.styled';
 import { UserMenu } from 'components/UserMenu/UserMenu';
 import { selectLoggedUser } from 'redux/selectors';
 import { useSelector } from 'react-redux';
 
 const Navigation = () => {
   const isLoggedIn = useSelector(selectLoggedUser);
-  // const isLoggedIn = true;
 
   return (
-    <nav>
-      <NavList>
-        <Item>
-          <NavLinkStyled to="/">Home</NavLinkStyled>
-        </Item>
+    <Header>
+      <Nav>
+        <LogoBox>
+          <LogoIcon>
+            <LogoElement>P</LogoElement>
+          </LogoIcon>
+          <LogoTitle>Phonebook</LogoTitle>
+        </LogoBox>
+        <NavList style={{ marginLeft: `70px` }}>
+          <Item>
+            <NavLinkStyled to="/">About us</NavLinkStyled>
+          </Item>
+        </NavList>
+
         {isLoggedIn ? (
           <UserMenu />
         ) : (
           <>
-            <ItemUser>
-              <NavLinkStyled to="/register">SIGN UP</NavLinkStyled>
-            </ItemUser>
-            <Item>
-              <NavLinkStyled to="/login">LOGIN</NavLinkStyled>
-            </Item>
+            <NavList style={{ marginLeft: `auto` }}>
+              <Item>
+                <NavLinkStyled to="/register">Sign up</NavLinkStyled>
+              </Item>
+              <Item
+                style={{
+                  borderRadius: `0px 0px 0px 50px`,
+                  backgroundColor: ` #F5F2EC`,
+                }}
+              >
+                <NavLinkStyled to="/login">Login</NavLinkStyled>
+              </Item>
+            </NavList>
           </>
         )}
-      </NavList>
-    </nav>
+      </Nav>
+    </Header>
   );
 };
 
