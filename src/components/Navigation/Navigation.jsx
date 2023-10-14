@@ -43,6 +43,7 @@ const Navigation = () => {
                 style={{
                   borderRadius: `0px 0px 0px 50px`,
                   backgroundColor: ` #F5F2EC`,
+                  backgroundColorHover: ` #fff`,
                 }}
               >
                 <NavLinkStyled to="/login">Login</NavLinkStyled>

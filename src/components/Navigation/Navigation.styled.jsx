@@ -17,6 +17,7 @@ export const Nav = styled.nav`
 `;
 // ======================================================================================================
 export const LogoIcon = styled.div`
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,7 +25,25 @@ export const LogoIcon = styled.div`
   height: 30px;
   background-color: black;
   border-radius: 15px;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: #ffee10;
+    transition: 0.5s;
+    transform: scale(0.9);
+    z-index: -1;
+  }
+  &:hover::before {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #ffee10;
+  }
 `;
+// ======================================================================================================
 
 export const LogoElement = styled.span`
   color: #fff;
@@ -46,25 +65,20 @@ export const LogoTitle = styled.span`
   letter-spacing: 1px;
 `;
 // ======================================================================================================
-// ======================================================================================================
-// ======================================================================================================
-// ======================================================================================================
-// ======================================================================================================
-// ======================================================================================================
-// ======================================================================================================
 
 export const Header = styled.header`
   padding-left: 60px;
 `;
+// ======================================================================================================
+
 export const Item = styled.li`
   display: flex;
   justify-content: center;
   align-items: center;
   width: 160px;
   height: 100px;
-  border-radius: {$props=>borderRadius || "20px"};
-  bar
-  background-color:{$props=>backgroundColor || "white"}; ;
+  border-radius: ${props => props.borderRadius || '20px'};
+  background-color: ${props => props.backgroundColor || 'white'};
   color: white;
 `;
 // ======================================================================================================
@@ -86,20 +100,59 @@ export const NavList = styled.ul`
   margin: 0px;
   padding: 0px;
   display: flex;
-  margin-left:{$props => props.marginLeft || '24px'}
+  margin-left: ${props => props.marginLeft || '24px'};
 `;
 // ======================================================================================================
+
 export const NavLinkStyled = styled(NavLink)`
-  color: #553c16;
-  font-family: Poppins;
-  font-size: 13px;
-  font-weight: 600;
-  line-height: 13px;
-  letter-spacing: 0.5px;
-  text-decoration: none;
+  position: relative;
+  display: block;
   text-transform: uppercase;
-  &.active {
-    color: red;
+  margin: 20px 0;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #262626;
+  font-family: sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  transition: 0.5s;
+  z-index: 1;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-top: 2px solid #262626;
+    border-bottom: 2px solid #262626;
+    transform: scaleY(2);
+    opacity: 0;
+    transition: 0.3s;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #262626;
+    transform: scale(0);
+    opacity: 0;
+    transition: 0.3s;
+    z-index: -1;
+  }
+  &:hover {
+    color: #fff;
+    &:before {
+      transform: scaleY(1);
+      opacity: 1;
+    }
+    &:after {
+      transform: scaleY(1);
+      opacity: 1;
+    }
   }
 `;
 // ======================================================================================================
