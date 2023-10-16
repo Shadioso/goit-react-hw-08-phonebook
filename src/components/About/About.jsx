@@ -18,11 +18,15 @@ import {
   AboutSubTitle,
   TitleContainer,
   LinkList,
-  LinkIcon,
+  Link,
   LinkItem,
   ListTitle,
-  LinkArrow,
+  Instagram,
+  Linkedin,
+  IconBox,
   Footer,
+  Facebook,
+  Twitter,
 } from './About.styled';
 const About = () => {
   return (
@@ -40,11 +44,9 @@ const About = () => {
           srcSet={`${KGirl} 1x,${KGirlL} 2x`}
           src={KGirl}
           alt="Опис зображення й"
-          style={{
-            height: `390px`,
-            width: `390px`,
-            borderRadius: `190px 190px 0px 0px`,
-          }}
+          height={`390px`}
+          width={`390px`}
+          borderRadius={`190px 190px 0px 0px`}
         />
       </AboutContainer>
       <AboutContainer>
@@ -52,32 +54,23 @@ const About = () => {
           srcSet={`${AGirl} 1x,${AGirlL} 2x`}
           src={AGirl}
           alt="Опис зображення й"
-          style={{
-            height: `450px`,
-            width: `501px`,
-            borderRadius: `0px 0px 250px 250px`,
-          }}
+          height={`450px`}
+          width={`501px`}
+          borderRadius={`0px 0px 250px 250px`}
         />
         <AboutImg
           srcSet={`${AsGirl} 1x,${AsGirlL} 2x`}
           src={AsGirl}
           alt="Опис зображення й"
-          style={{
-            height: `328px`,
-            width: `328px`,
-            borderRadius: `0px 0px 250px 250px`,
-            marginLeft: `296px`,
-          }}
+          height={`328px`}
+          width={`328px`}
+          borderRadius={`0px 0px 250px 250px`}
+          marginLeft={`296px`}
         />
       </AboutContainer>
       <AboutContainer>
-        <TitleContainer
-          style={{
-            width: `442px`,
-            height: `412px`,
-          }}
-        >
-          <AboutTitle style={{ marginTop: `160px` }}>
+        <TitleContainer width={`442px`} height={`482px`}>
+          <AboutTitle marginTop={`160px`}>
             Chat with visitors while they browse your site
           </AboutTitle>
           <AboutSubTitle>
@@ -90,23 +83,19 @@ const About = () => {
           srcSet={`${AmGirl} 1x,${AmGirlL} 2x`}
           src={AmGirl}
           alt="Опис зображення й"
-          style={{
-            height: `433px`,
-            width: `348px`,
-            marginTop: `433px`,
-            borderRadius: `0px 0px 190px 190px`,
-          }}
+          height={`433px`}
+          width={`348px`}
+          marginTop={`433px`}
+          borderRadius={`0px 0px 190px 190px`}
         />
         <AboutImg
           srcSet={`${EGirl} 1x,${EGirlL} 2x`}
           src={EGirl}
           alt="Опис зображення й"
-          style={{
-            height: `433px`,
-            width: `348px`,
-            marginLeft: `0px`,
-            borderRadius: `190px 190px 0px 0px`,
-          }}
+          height={`433px`}
+          width={`348px`}
+          marginLeft={`0px`}
+          borderRadius={`190px 190px 0px 0px`}
         />
       </AboutContainer>
       <AboutContainer>
@@ -114,14 +103,12 @@ const About = () => {
           srcSet={`${OGirl} 1x,${OGirlL} 2x`}
           src={OGirl}
           alt="Опис зображення й"
-          style={{
-            height: `650px`,
-            width: `400px`,
-            marginLeft: `0px`,
-            borderRadius: `190px 190px 190px 190px`,
-          }}
+          height={`650px`}
+          width={`400px`}
+          marginLeft={`0px`}
+          borderRadius={`190px 190px 190px 190px`}
         />
-        <TitleContainer style={{ marginLeft: `219px`, marginTop: `164px` }}>
+        <TitleContainer marginLeft={`219px`} marginTop={`164px`}>
           <AboutTitle>
             It’s possible to do video call with your customers
           </AboutTitle>
@@ -132,7 +119,7 @@ const About = () => {
           </AboutSubTitle>
         </TitleContainer>
       </AboutContainer>
-      <AboutContainer style={{ paddingTop: `100px`, paddingBottom: `30px` }}>
+      <AboutContainer paddingTop={`100px`} paddingBottom={`30px`}>
         <TitleContainer>
           <AboutTitle>Browse our Case Study</AboutTitle>
           <AboutSubTitle>
@@ -143,21 +130,48 @@ const About = () => {
         </TitleContainer>
         <LinkList>
           <LinkItem>
-            <LinkIcon></LinkIcon>
-            <ListTitle>Linkedin</ListTitle>
-            <LinkArrow></LinkArrow>
+            <Link
+              href="https://www.linkedin.com/in/shadi-abumutair"
+              target="blank"
+            >
+              <IconBox>
+                <Linkedin />
+              </IconBox>
+              <ListTitle>Linkedin</ListTitle>
+            </Link>
           </LinkItem>
           <LinkItem>
-            <LinkIcon></LinkIcon>
-            <ListTitle>Facebook</ListTitle>
+            <Link
+              href="https://www.linkedin.com/in/shadi-abumutair"
+              target="blank"
+            >
+              <IconBox>
+                <Facebook />
+              </IconBox>
+              <ListTitle>Facebook</ListTitle>
+            </Link>
           </LinkItem>
           <LinkItem>
-            <LinkIcon></LinkIcon>
-            <ListTitle>Telegram</ListTitle>
+            <Link
+              href="https://www.linkedin.com/in/shadi-abumutair"
+              target="blank"
+            >
+              <IconBox>
+                <Instagram />
+              </IconBox>
+              <ListTitle>Instagram</ListTitle>
+            </Link>
           </LinkItem>
           <LinkItem>
-            <LinkIcon></LinkIcon>
-            <ListTitle>Instagram</ListTitle>
+            <Link
+              href="https://www.linkedin.com/in/shadi-abumutair"
+              target="blank"
+            >
+              <IconBox>
+                <Twitter />
+              </IconBox>
+              <ListTitle>Twitter</ListTitle>
+            </Link>
           </LinkItem>
         </LinkList>
       </AboutContainer>
