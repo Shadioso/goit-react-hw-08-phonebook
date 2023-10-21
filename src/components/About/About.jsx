@@ -10,7 +10,7 @@ import AmGirl from '../../images/americ-girl-1x.png';
 import AmGirlL from '../../images/americ-girl-2x.png';
 import OGirl from '../../images/office-girl-1x.png';
 import OGirlL from '../../images/office-girl-2x.png';
-
+import AuthMsg from 'components/Comments/AuthMsg';
 import {
   AboutContainer,
   AboutTitle,
@@ -48,6 +48,7 @@ const About = () => {
           width={`390px`}
           borderRadius={`190px 190px 0px 0px`}
         />
+        <AuthMsg />
       </AboutContainer>
       <AboutContainer>
         <AboutImg

@@ -7,6 +7,7 @@ import { ReactComponent as TwitterIcon } from '../../images/twitter.svg';
 
 // ===========================================================
 export const AboutContainer = styled.div`
+  position: relative;
   display: flex;
   padding-top: ${props => props.paddingTop || `0px`};
   padding-bottom: ${props => props.paddingBottom || `0px`};
@@ -67,42 +68,55 @@ export const Link = styled.a`
 // ===========================================================
 export const Instagram = styled(InstagramIcon)`
   ${Link}:hover & {
+    transform: rotateY(360deg);
     & path {
-      fill: rebeccapurple;
+      fill: #fff;
     }
-  }
-  & path {
-    fill: rgb(209 208 205);
   }
   width: 30px;
   height: 30px;
+  z-index: 3;
   transition: 0.5s;
 `;
 // ===========================================================
 export const Linkedin = styled(LinkedinIcon)`
-  & path {
-    fill: rgb(209 208 205);
+  ${Link}:hover & {
+    transform: rotateY(360deg);
+    & path {
+      fill: #fff;
+    }
   }
+  z-index: 3;
   width: 30px;
   height: 30px;
   transition: 0.5s;
 `;
 // ===========================================================
 export const Facebook = styled(FacebookIcon)`
-  & path {
-    fill: rgb(209 208 205);
+  ${Link}:hover & {
+    transform: rotateY(360deg);
+    & path {
+      fill: #fff;
+    }
   }
   width: 30px;
   height: 30px;
+  z-index: 3;
+
   transition: 0.5s;
 `;
 // ===========================================================
 export const Twitter = styled(TwitterIcon)`
-  & path {
-    fill: rgb(209 208 205);
+  ${Link}:hover & {
+    transform: rotateY(360deg);
+    & path {
+      fill: #fff;
+    }
   }
   width: 30px;
   height: 30px;
+  z-index: 3;
+
   transition: 0.5s;
 `;
 // ===========================================================
@@ -110,18 +124,42 @@ export const Twitter = styled(TwitterIcon)`
 export const LinkItem = styled.li`
   margin-top: 0px;
   margin-bottom: 20px;
+  &:after {
+    display: block;
+    content: '';
+    height: 1px;
+    margin-top: 30px;
+    width: 100%;
+    background: rgb(209 208 205);
+  }
 `;
 
 // ===========================================================
 export const IconBox = styled.div`
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  border: 1px solid rgb(209 208 205);
-  ${'' /* background-color: black; */}
+  overflow: hidden;
+  border: 2px solid rgb(209 208 205);
+  &:before {
+    ${Link}:hover & {
+      top: 0%;
+      background: #0077b5;
+    }
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    transition: 0.5s;
+    z-index: 2;
+  }
 `;
 // ===========================================================
 
@@ -134,6 +172,11 @@ export const ListTitle = styled.h2`
   font-weight: 400;
   line-height: 70px;
   letter-spacing: 0.833px;
+  transition: 0.1s;
+  ${Link}:hover & {
+    scale: 1.1;
+    transition: 0.1s;
+  }
 `;
 // ===========================================================
 export const Footer = styled.div`
