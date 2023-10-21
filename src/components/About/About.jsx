@@ -11,6 +11,7 @@ import AmGirlL from '../../images/americ-girl-2x.png';
 import OGirl from '../../images/office-girl-1x.png';
 import OGirlL from '../../images/office-girl-2x.png';
 import AuthMsg from 'components/Comments/AuthMsg';
+import Message from 'components/Comments/Message';
 import {
   AboutContainer,
   AboutTitle,
@@ -33,14 +34,13 @@ const About = () => {
     <>
       <AboutContainer>
         <TitleContainer>
-          <AboutTitle>Let’s Connect with Your Visitors in Real Time</AboutTitle>
-          <AboutSubTitle>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore
-          </AboutSubTitle>
+          <AboutTitle>
+            Use the Phonebook and add contacts of your business partners
+          </AboutTitle>
         </TitleContainer>
 
         <AboutImg
+          loading="lazy"
           srcSet={`${KGirl} 1x,${KGirlL} 2x`}
           src={KGirl}
           alt="Опис зображення й"
@@ -52,6 +52,7 @@ const About = () => {
       </AboutContainer>
       <AboutContainer>
         <AboutImg
+          loading="lazy"
           srcSet={`${AGirl} 1x,${AGirlL} 2x`}
           src={AGirl}
           alt="Опис зображення й"
@@ -60,6 +61,7 @@ const About = () => {
           borderRadius={`0px 0px 250px 250px`}
         />
         <AboutImg
+          loading="lazy"
           srcSet={`${AsGirl} 1x,${AsGirlL} 2x`}
           src={AsGirl}
           alt="Опис зображення й"
@@ -71,16 +73,16 @@ const About = () => {
       </AboutContainer>
       <AboutContainer>
         <TitleContainer width={`442px`} height={`482px`}>
-          <AboutTitle marginTop={`160px`}>
-            Chat with visitors while they browse your site
+          <AboutTitle marginTop={`90px`}>
+            Add new phone numbers in one click
           </AboutTitle>
           <AboutSubTitle>
-            “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam.”
+            While potential business partners are browsing your page, you can
+            share your contacts with them for cooperation
           </AboutSubTitle>
         </TitleContainer>
         <AboutImg
+          loading="lazy"
           srcSet={`${AmGirl} 1x,${AmGirlL} 2x`}
           src={AmGirl}
           alt="Опис зображення й"
@@ -90,6 +92,7 @@ const About = () => {
           borderRadius={`0px 0px 190px 190px`}
         />
         <AboutImg
+          loading="lazy"
           srcSet={`${EGirl} 1x,${EGirlL} 2x`}
           src={EGirl}
           alt="Опис зображення й"
@@ -98,9 +101,11 @@ const About = () => {
           marginLeft={`0px`}
           borderRadius={`190px 190px 0px 0px`}
         />
+        <Message />
       </AboutContainer>
       <AboutContainer>
         <AboutImg
+          loading="lazy"
           srcSet={`${OGirl} 1x,${OGirlL} 2x`}
           src={OGirl}
           alt="Опис зображення й"
@@ -111,22 +116,21 @@ const About = () => {
         />
         <TitleContainer marginLeft={`219px`} marginTop={`164px`}>
           <AboutTitle>
-            It’s possible to do video call with your customers
+            It’s possible to check,how many people have saved your phone number
           </AboutTitle>
           <AboutSubTitle>
-            “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam.”
+            This is a great opportunity to check the number of encouraged people
+            in cooperation and the activity of users on the website
           </AboutSubTitle>
         </TitleContainer>
       </AboutContainer>
       <AboutContainer paddingTop={`100px`} paddingBottom={`30px`}>
         <TitleContainer>
-          <AboutTitle>Browse our Case Study</AboutTitle>
+          <AboutTitle>Browse our team and partners</AboutTitle>
           <AboutSubTitle>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam.
+            This is a redesigned demo version of the website, builded using the
+            React.js library.If you are interested in my works, visit one of the
+            proposed social networks.
           </AboutSubTitle>
         </TitleContainer>
         <LinkList>
@@ -143,7 +147,7 @@ const About = () => {
           </LinkItem>
           <LinkItem>
             <Link
-              href="https://www.linkedin.com/in/shadi-abumutair"
+              href="https://www.facebook.com/profile.php?id=100033617282668"
               target="blank"
             >
               <IconBox>
@@ -154,7 +158,7 @@ const About = () => {
           </LinkItem>
           <LinkItem>
             <Link
-              href="https://www.linkedin.com/in/shadi-abumutair"
+              href="https://instagram.com/shaaaa_di?igshid=NzZlODBkYWE4Ng%3D%3D&utm_source=qr"
               target="blank"
             >
               <IconBox>

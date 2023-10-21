@@ -1,18 +1,16 @@
-import { Comment } from 'react-loader-spinner';
+import { Discuss } from 'react-loader-spinner';
 
 export const Loader = () => {
   return (
-    <Comment
+    <Discuss
       visible={true}
-      height="500"
-      width="300"
+      height="400"
+      width="250"
       ariaLabel="comment-loading"
       wrapperStyle={{
         position: `absolute`,
         top: `10%`,
         left: `40%`,
-        // marginLeft: `auto`,
-        // marginRight: `auto`,
         display: `block`,
       }}
       wrapperClass="comment-wrapper"

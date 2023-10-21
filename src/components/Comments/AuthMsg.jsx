@@ -3,8 +3,10 @@ import { AuthContainer, AuthTitle, AuthButton } from './Comments.styled';
 const AuthMsg = () => {
   return (
     <AuthContainer>
-      <AuthTitle>Hello!</AuthTitle>
-      <AuthButton>Log In</AuthButton>
+      <AuthTitle>
+        Only five minutes of registration and unlimited access to your contacts!
+      </AuthTitle>
+      <AuthButton>Register</AuthButton>
     </AuthContainer>
   );
 };
