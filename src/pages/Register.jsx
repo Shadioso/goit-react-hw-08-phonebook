@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Form } from './Login.styled';
+import { AuthLoginForm } from './Login.styled';
 import { useDispatch } from 'react-redux';
 import { register } from 'services/api';
 import { Input, Button, Label } from 'components/PhoneBook/PhoneBook.styled';
@@ -29,7 +29,7 @@ const Register = () => {
   return (
     <>
       <FormTitle> Sign up 👨‍💻</FormTitle>
-      <Form onSubmit={submitForm}>
+      <AuthLoginForm onSubmit={submitForm}>
         <Label>
           Name
           <Input
@@ -73,7 +73,7 @@ const Register = () => {
         >
           Done🚀
         </Button>
-      </Form>
+      </AuthLoginForm>
     </>
   );
 };

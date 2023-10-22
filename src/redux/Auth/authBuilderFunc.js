@@ -8,15 +8,12 @@ export const handleAddUserSucces = (state, action) => {
 
 export const handlePending = () => {};
 
-export const handleRejected = () => {
-  alertFailure();
-};
+export const handleRejected = () => {};
 
 export const handleLoginSucces = (state, action) => {
   state.user = action.payload.user;
   state.token = action.payload.token;
   state.isLoggedIn = true;
-  alertSucces();
 };
 
 export const handleLogOutSucces = (state, action) => {
