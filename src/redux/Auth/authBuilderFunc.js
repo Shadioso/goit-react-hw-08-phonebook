@@ -1,5 +1,3 @@
-import { alertSucces, alertFailure } from 'services/alert';
-
 export const handleAddUserSucces = (state, action) => {
   state.user = action.payload.user;
   state.token = action.payload.token;

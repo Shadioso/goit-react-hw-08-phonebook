@@ -4,7 +4,6 @@
 // import { login } from 'services/api';
 // import { Input, Button, Label } from 'components/PhoneBook/PhoneBook.styled';
 // import { FormTitle } from './Login.styled';
-
 // const Login = () => {
 //   const [contact, setContact] = useState({ email: ``, password: `` });
 //   const dispatch = useDispatch();
@@ -67,7 +66,7 @@
 // export default Login;
 import React from 'react';
 import { Formik } from 'formik';
-import { validateSchema } from '../services/authSchema';
+import { validateSchema } from '../services/authLogInSchema';
 import {
   AuthInput,
   AuthLabel,
@@ -86,6 +85,7 @@ import {
 import { useDispatch } from 'react-redux';
 import { login } from 'services/api';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import LoginImg from '../images/loginImg.png';
 
 //
 const LoginForm = () => {
@@ -210,6 +210,7 @@ const LoginForm = () => {
           </AuthLoginForm>
         )}
       </Formik>
+      <AuthImage src={LoginImg} alt="photo" />
       <NavLinkStyled to="/register">Sign Up</NavLinkStyled>
     </BoxLogin>
   );

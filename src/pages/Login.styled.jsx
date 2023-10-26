@@ -93,34 +93,35 @@ export const BoxLogin = styled.div`
 
 export const AuthImage = styled.img`
   display: none;
-  @media screen and (min-width: 1366px) {
+  @media screen and (min-width: 768px) {
     display: block;
     position: absolute;
     width: 400px;
     height: 416px;
-    left: 0%;
-    bottom: 0%;
+    left: 70%;
+    top: 30%;
   }
 `;
 
 // ----------------------------------------------------------------------------
 
 export const Box = styled.div`
-  // position: relative;
-  // width: 100%;
-  // height: 100%;
-  // text-align: center;
-  // background-color: #dcebf7;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
 
-  // @media screen and (min-width: 375px) {
-  //   padding: 155px 20px;
-  // }
-  // @media screen and (min-width: 768px) {
-  //   padding: 227px 144px;
-  // }
-  // @media screen and (min-width: 1440px) {
-  //   padding: 124px 480px 77px;
-  // }
+  ${
+    '' /* @media screen and (min-width: 375px) {
+    padding: 155px 20px;
+  }
+  @media screen and (min-width: 768px) {
+    padding: 227px 144px;
+  }
+  @media screen and (min-width: 1440px) {
+    padding: 124px 480px 77px;
+  } */
+  }
 `;
 // ----------------------------------------------------------------------------
 
@@ -179,7 +180,7 @@ export const AuthForm = styled.form`
   }
   @media screen and (min-width: 768px) {
     width: 480px;
-    height: 520px;
+    height: 470px;
   }
 `;
 // ----------------------------------------------------------------------------
@@ -216,11 +217,11 @@ export const AuthInput = styled.input`
 export const FormTitle = styled.h1`
   margin: 0px;
   margin-bottom: 32px;
-  color: #3e85f3;
+  color: rgba(0, 0, 0, 1);
   text-shadow: 0px 9.399999618530273px 57.6875px rgba(0, 0, 0, 0.04),
     0px 47px 355px rgba(0, 0, 0, 0.07);
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 32px;
+  font-weight: 700;
   line-height: 24px;
 
   @media screen and (min-width: 768px) {
@@ -257,7 +258,6 @@ export const Text = styled.p`
 `;
 // ----------------------------------------------------------------------------
 export const SubmitButton = styled.button`
-  ${'' /* font-family: Inter; */}
   display: flex;
   justify-content: center;
   align-items: center;
@@ -265,16 +265,18 @@ export const SubmitButton = styled.button`
   height: 46px;
   cursor: pointer;
   border-radius: 16px;
-  background: #3e85f3;
+  background: rgba(0, 0, 0, 1);
   box-shadow: 4px 2px 16px 0px rgba(136, 165, 191, 0.48);
   color: #fff;
   font-size: 14px;
   font-weight: 600;
   line-height: 18px;
   letter-spacing: -0.28px;
+  transition: 0.2s;
   border: none;
   &:hover {
-    background: #2b78ef;
+    scale: 1.1;
+    transition: 0.2s;
   }
 
   @media screen and (min-width: 768px) {
