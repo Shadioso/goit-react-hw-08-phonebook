@@ -166,3 +166,15 @@ export const Stroke = styled.p`
   font-size: 20px;
   font-weight: 600;
 `;
+
+export const UserMenuItem = styled.li`
+  list-style: none;
+  align-items: center;
+  display: flex;
+`;
+
+export const UserMenuBox = styled.div`
+  display: flex;
+  margin-left: 400px;
+  align-items: baseline;
+`;

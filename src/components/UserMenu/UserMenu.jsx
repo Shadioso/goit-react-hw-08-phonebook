@@ -5,9 +5,9 @@ import { logOut } from 'services/api';
 import {
   Item,
   NavLinkStyled,
-  ItemNav,
-  Title,
+  UserMenuItem,
   Stroke,
+  UserMenuBox,
 } from 'components/Navigation/Navigation.styled';
 
 export const UserMenu = () => {
@@ -19,18 +19,19 @@ export const UserMenu = () => {
   };
   return (
     <>
-      <Title>Welcome, {user.name} 😎</Title>
-      <ItemNav>
+      <UserMenuItem>
         <NavLinkStyled to="/contacts">CONTACTS</NavLinkStyled>
-      </ItemNav>
-      <li>
-        <Stroke>✉️ {user.email}</Stroke>
-      </li>
-      <Item>
-        <NavLinkStyled to="/" onClick={handleLogOut}>
-          LOG OUT
-        </NavLinkStyled>
-      </Item>
+      </UserMenuItem>
+      <UserMenuBox>
+        <UserMenuItem>
+          <Stroke>✉️ {user.email}</Stroke>
+        </UserMenuItem>
+        <Item>
+          <NavLinkStyled to="/" onClick={handleLogOut}>
+            LOG OUT
+          </NavLinkStyled>
+        </Item>
+      </UserMenuBox>
     </>
   );
 };

@@ -184,3 +184,14 @@ export const Footer = styled.div`
   height: 30px;
   background-color: rgb(209 208 205);
 `;
+
+// ===========================================================
+export const WebAlert = styled.div`
+  position: absolute;
+  top: 54%;
+  left: 5%;
+  border-radius: 30px;
+  width: 300px;
+  height: 340px;
+  border: 1px solid black;
+`;

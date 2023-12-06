@@ -28,6 +28,7 @@ import {
   Footer,
   Facebook,
   Twitter,
+  WebAlert,
 } from './About.styled';
 const About = () => {
   return (
@@ -102,6 +103,7 @@ const About = () => {
           borderRadius={`190px 190px 0px 0px`}
         />
         <Message />
+        <WebAlert />
       </AboutContainer>
       <AboutContainer>
         <AboutImg

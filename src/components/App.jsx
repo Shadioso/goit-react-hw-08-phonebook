@@ -33,7 +33,7 @@ export const App = () => {
           element={
             <RestrictedRoute
               component={Register}
-              redictertTo="/"
+              redictertTo="/contacts"
             ></RestrictedRoute>
           }
         ></Route>
@@ -42,7 +42,7 @@ export const App = () => {
           element={
             <RestrictedRoute
               component={Login}
-              redictertTo="/"
+              redictertTo="/contacts"
             ></RestrictedRoute>
           }
         ></Route>
